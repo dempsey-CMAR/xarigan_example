@@ -1,0 +1,98 @@
+---
+title: "Presentation Ninja"
+subtitle: "⚔<br/>with xaringan"
+author: "Yihui Xie"
+institute: "RStudio, PBC"
+date: "2016/12/12 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+layout: true
+
+background-image: url(logo.png)
+background-position: 50% 100%
+background-size: 100%
+
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(plotly)
+library(xaringanthemer)
+
+knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
+```
+
+
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+
+font_style <- "Kumbh Sans"
+
+style_mono_accent(
+  base_color = "#2088e8",
+  header_font_google = google_font(font_style),
+  text_font_google   = google_font(font_style, "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+
+```
+
+class: center, middle
+
+# *LOGO TEST
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+---
+
+# Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+---
+
+# Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+---
+
+# Slide with Plot
+
+A little bit of text
+
+```{r pressure, echo=FALSE, fig.width=15, fig.height=5, fig.retina=3, fig.align='center'}
+
+p <- ggplot(cars, aes(dist, speed)) + 
+  geom_point()
+
+ggplotly(p)
+
+```
+
+
+---
+
+# Font Check 
+
+Style: `r font_style`
+
+Almost before we knew it, we had left the ground
+
+
+
